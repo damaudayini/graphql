@@ -1,0 +1,39 @@
+type Query {
+    searchCustomers(filter: CustomerFilter): [Customer]
+}
+
+type Customer{
+    cif: String
+    cifType: CIFType
+    name: String
+    gender: String
+    nationality: Nationality
+    industry: Industry
+    riskProfile : Int
+    passportNumber : String
+    emiratesID : String
+    mobile: String
+    address : String
+    grossMonthlyIncome : Int
+    relatedCifs: [Customer]
+}
+
+type Nationality{
+    code: String
+    description: String
+}
+
+type Industry {
+    code: String
+    description: String
+}
+
+type CIFType {
+    code: String
+    description: String
+}
+
+input CustomerFilter {
+  cif: ID
+  name: String
+}
